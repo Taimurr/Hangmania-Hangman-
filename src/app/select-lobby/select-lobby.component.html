@@ -1,0 +1,31 @@
+<div id="header">
+    <h2 id="title">online lobbies: </h2>
+    <button id="create" (click)="createServer()">create server</button>
+</div>
+
+<table mat-table [dataSource]="lobbyInfo" id="lobbies">
+
+    <ng-container matColumnDef="numPlayers">
+        <th mat-header-cell *matHeaderCellDef>Total Players</th>
+        <td mat-cell *matCellDef="let element">{{element.current_players}} / {{element.max_player}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="host">
+        <th mat-header-cell *matHeaderCellDef>Host:</th>
+        <td mat-cell *matCellDef="let element">{{element.host}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="round">
+        <th mat-header-cell *matHeaderCellDef>round:</th>
+        <td mat-cell *matCellDef="let element">{{element.round}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="joinable">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element"><span *ngIf="!element.state"><button (click)="joinLobby(element)">join</button></span></td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+</table>

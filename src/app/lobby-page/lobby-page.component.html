@@ -1,0 +1,24 @@
+<table id="headerTable">
+    <tr>
+        <th class="headerText">Lobby</th>
+        <th class="headerText">3/5</th>
+    </tr>
+</table>
+
+
+<table id="playerTable" cdk-table [dataSource]="lobbyTable">
+    <ng-container cdkColumnDef="name">
+      <th cdk-header-cell *cdkHeaderCellDef id="player"> Players </th>
+      <td cdk-cell *cdkCellDef="let element" id="playerId"> {{element.name}} </td>
+    </ng-container>
+  
+    <tr cdk-header-row *cdkHeaderRowDef="displayedColumns"></tr>
+    <tr cdk-row *cdkRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<table id="buttonTable">
+    <tr>
+        <th><button mat-button class="buttons" (click)="leaveLobby()">Leave</button></th>
+        <th><button mat-button class="buttons" (click)="startGame()">Start</button></th>
+    </tr>
+</table>

@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    font-family: 'Anonymous Pro',monospace;
+}
+
+.container {
+    text-align: center;
+    padding: 50px;
+}
+
+h1 {
+    font-size: 134px;
+    font-family: 'Magz';
+    text-shadow: 10px 10px 10px silver; /* Adjust the values for the shadow effect */
+    text-shadow: 10px 10px 10px grey; /* Adjust the values for the shadow effect */
+}
+
+p {
+    font-size: 32px;
+    font-family: 'Anonymous Pro';
+}
+
+#nicknameForm {
+    margin-top: 20px;
+    font-family: 'Anonymous Pro';
+}
+
+#nicknameInput {
+    background: transparent;
+    border: none;
+    border-bottom: 4px dashed white; /* Change to dashed line */
+    color: white;
+    padding: 5px;
+    font-size: 1em;
+    font-family: 'Anonymous Pro';
+    margin-right: 10px;
+    outline: none; /* Remove the border highlight on focus */
+}
+
+button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 23px;
+    font-family: 'Magz';
+    cursor: pointer;
+    border-radius: 75%; /* Make the button circular */
+    font-style: none; /* Make the button text italic */
+}
+
+button:hover {
+    background-color: #ddd; /* Add a hover effect */
+}

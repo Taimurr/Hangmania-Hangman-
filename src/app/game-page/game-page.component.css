@@ -1,0 +1,144 @@
+.container {
+    display: flex; 
+    height:100vh;
+  }
+.game {
+    height:100vh;
+    width: 80%; 
+    border: 1px solid #000;
+    box-sizing: border-box; 
+    padding:10px;
+    font-size:35px;
+    display: flex;
+    flex-direction: column;
+}
+.gameTop{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}  
+
+.guessText button{
+    width:100px;
+    height:50px;
+    margin-left: 35px;
+    font-size: 20px;
+}
+.guessButton{
+    margin-right:30px;
+    border-radius:50px;
+    padding:10 20px;
+    width:200px;
+    height:60px;
+    background-color: white;
+    color:black;
+    font-size: 25px;
+    cursor:pointer;
+    box-shadow:inset 0 -8px 0 0 rgba(0,0,0,.2),
+        1px 1px 0 0 #000000,
+        2px 2px 0 0 #000000,
+        3px 3px 0 0 #000000,
+        4px 4px 0 0 #000000,
+        5px 5px 0 0 #000000,
+        6px 6px 0 0 #000000,
+        7px 7px 0 0 #000000,
+        8px 8px 0 0 #000000,
+        9px 9px 0 0 #000000,
+        10px 10px 0 0 #000000,
+        11px 11px 0 0 #000000,
+        12px 12px 0 0 #000000;
+}
+
+.guessButton:hover {
+    transform: scale(1.1) perspective(1px);
+    background-color: rgb(202, 198, 198);
+}
+
+.guessButton:active{
+    box-shadow:inset 0 -4px 0 0 rgba(0,0,0,.2),
+      1px 1px 0 0 #000000,
+      2px 2px 0 0 #000000,
+      3px 3px 0 0 #000000,
+      4px 4px 0 0 #000000,
+      5px 5px 0 0 #000000;
+}
+.keyboardContainer{
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom:10px;
+}
+.keyboard{
+    display:flex;
+}
+
+.keyboardButton {
+    margin-left:15px;
+    display: inline-block;
+    width:50px;
+    height:50px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    box-shadow:inset 0 -8px 0 0 rgba(0,0,0,.2),
+        1px 1px 0 0 #000000,
+        2px 2px 0 0 #000000,
+        3px 3px 0 0 #000000,
+        4px 4px 0 0 #000000,
+        5px 5px 0 0 #000000,
+        6px 6px 0 0 #000000,
+        7px 7px 0 0 #000000,
+        8px 8px 0 0 #000000,
+        9px 9px 0 0 #000000,
+        10px 10px 0 0 #000000,
+        11px 11px 0 0 #000000,
+        12px 12px 0 0 #000000;
+  }
+  
+  .keyboardButton:hover {
+    background-color: #b6b4b4;
+    border-color: #aaa;
+    color: #222;
+  }
+  
+  .keyboardButton:active {
+    background-color: #ccc;
+    border-color: #888;
+    color: #111;
+    box-shadow:inset 0 -4px 0 0 rgba(0,0,0,.2),
+    1px 1px 0 0 #000000,
+    2px 2px 0 0 #000000,
+    3px 3px 0 0 #000000,
+    4px 4px 0 0 #000000,
+    5px 5px 0 0 #000000;
+  }
+.leaderboard {
+    height: 100vh;
+    flex: 1; 
+    border: 1px solid #000; 
+    box-sizing: border-box; 
+    background-color: rgb(51, 51, 50);
+    text-align:center;
+    font-size:25px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start; 
+}
+  
+.middle{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+

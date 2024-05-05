@@ -1,0 +1,72 @@
+<div class="container">
+    <div class="game">
+        <div class = "gameTop">
+            <h1 style = "margin-left: 50px">
+            round one
+            </h1>
+            <button *ngIf = "guess == false && outOfGuesses == false" class = "guessButton" (click) = "guess = true">Guess the word</button>
+            <button *ngIf = "guess == true && correct == false && wrong == false" class = "guessButton" (click) = "guess = false">Close</button>
+
+        </div>
+         <div class = "display" style="text-align: center;">
+            <div *ngIf = "guess == true && correct == false && wrong == false" class = "guessText">
+                <img src = "../../assets/warning.png" style = "width:100px; height:100px">
+                <p><span style = "color: yellow;">Warning!</span> If you guess incorrectly, you will <span style = "color: red;">LOSE</span> the round.</p>
+                <input #guessInput type = "text" placeholder="Enter your guess" style = "width:300px; height:50px; font-size: 20px;">
+                <button class = "guessButton" (click) = "submitAnswer(guessInput.value)">Submit</button>
+            </div>
+            <div *ngIf = "correct == true">
+                <img src = "../../assets/correct.png" style = "width:60px; height:60px">
+                <p style = "color: green;">Correct!</p>
+                <p>Waiting for other players...</p>
+            </div>
+            <div *ngIf = "wrong == true">
+                <img src = "../../assets/wrong.png" style = "width:60px; height:60px">
+                <p style = "color: red;">Wrong!</p>
+                <p>The correct word was {{wordToGuess}}</p>
+                <p>Waiting for other players...</p>
+            </div>
+            <div *ngIf = "outOfGuesses == true">
+                <img src = "../../assets/outOfGuesses.png" style = "width:60px; height:60px">
+                <p style = "color: red;">out of guesses!</p>
+                <p>The correct word was {{wordToGuess}}</p>
+                <p>Waiting for other players...</p>
+            </div>
+            <img *ngIf = "guess == false && outOfGuesses == false" [src] = "hangmanImages[attempts]">
+            
+            <p *ngIf = "guess == false && outOfGuesses == false">{{ getDisplayedWord() }}</p>
+         </div>
+         <div *ngIf = "guess == false && outOfGuesses == false" class = "keyboardContainer">
+            <div class = "keyboard">
+                <div *ngFor = "let t of topButtons; let i = index">
+                    <button *ngIf = "topButtons[i].clicked == false && topButtons[i].correct == false"class = "keyboardButton" (click) ="handleGuess(t.letter, i, 'top')">{{t.letter}}</button>
+                    <button *ngIf = "topButtons[i].clicked == true"class = "keyboardButton"  style = "background-color: black; border: none; color:black">{{t.letter}}</button>
+                    <button *ngIf = "topButtons[i].correct == true"class = "keyboardButton" style = "background-color: rgb(118, 250, 106); border: none;">{{t.letter}}</button>
+                </div>
+            </div>
+            <div class = "keyboard">
+                <div *ngFor = "let t of middleButtons; let i = index">
+                    <button *ngIf = "middleButtons[i].clicked == false && middleButtons[i].correct == false" class = "keyboardButton" (click) ="handleGuess(t.letter, i , 'middle')">{{t.letter}}</button>
+                    <button *ngIf = "middleButtons[i].clicked == true"class = "keyboardButton"  style = "background-color: black; border: none; color:black">{{t.letter}}</button>
+                    <button *ngIf = "middleButtons[i].correct == true"class = "keyboardButton" style = "background-color: rgb(118, 250, 106); border: none;">{{t.letter}}</button>
+
+                </div>
+            </div> 
+            <div class = "keyboard">
+                <div *ngFor = "let t of bottomButtons; let i = index">
+                    <button *ngIf = "bottomButtons[i].clicked == false && bottomButtons[i].correct == false" class = "keyboardButton" (click) ="handleGuess(t.letter, i , 'bottom')">{{t.letter}}</button>
+                    <button *ngIf = "bottomButtons[i].clicked == true"class = "keyboardButton"  style = "background-color: black; border: none; color:black">{{t.letter}}</button>
+                    <button *ngIf = "bottomButtons[i].correct == true"class = "keyboardButton" style = "background-color: rgb(118, 250, 106); border: none;">{{t.letter}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="leaderboard">
+        <h2 class = "totalLeader">active leaderboard:</h2>
+     
+        <div class = "middle">
+            <h2 class = "roundLeader">current round:</h2>
+        </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,29 @@
+<h1>create a server</h1>
+<div class = "container">
+    <br>
+    <h2 class = "containerText">choose total players</h2>
+    <div class = "smallButtonContainer">
+     <div *ngFor="let p of playerButtons; let i = index" style = "background-color: rgb(43, 42, 42);">
+        <button *ngIf="playerButtons[i].clicked == true" style = "background-color: rgb(34, 33, 33); color: white;">{{p.num}}</button>
+        <button *ngIf="playerButtons[i].clicked == false" (click) = "playerCount(i)">{{p.num}}</button>
+     </div>
+    </div>
+    
+    <h2 class = "containerText">choose total rounds</h2>
+    
+    <div class = "smallButtonContainer">
+        <div *ngFor="let r of roundButtons; let i = index" style = "background-color: rgb(43, 42, 42);">
+            <button *ngIf="roundButtons[i].clicked == true" style = "background-color: rgb(34, 33, 33); color: white;">{{r.num}}</button>
+            <button *ngIf="roundButtons[i].clicked == false" (click) = "roundCount(i)">{{r.num}}</button>
+        </div>
+    </div>
+
+    <div class = "createGameContainer">
+        <button class = "createGameButton" (click) = "createServer()">create game</button>
+    </div>
+    
+    <div class = "backContainer">
+        <button class = "backButton" (click) = "goBack()" >back</button>
+    </div>
+    <br>
+</div>

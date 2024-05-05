@@ -1,0 +1,35 @@
+.container{
+    margin: 0 auto;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width:60%;
+}
+h1{
+    text-align: center;
+    font-size: 100px;
+    font-weight:500;
+    text-shadow: 7px 7px rgb(114, 112, 112);
+    margin: 0;
+}
+
+.leaderboard{
+    background-color: rgb(43, 42, 42);
+    display:flex;
+    flex-direction: column;
+    gap:30px;
+}
+
+
+a{
+    font-size: 35px;
+    position:fixed;
+    bottom:20px;
+    right:30px;
+    cursor:pointer;
+}
+
+p{
+    font-size:23px;
+}

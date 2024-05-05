@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Magz';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Magz'), url('https://fonts.cdnfonts.com/s/17665/Magz.woff') format('woff');
+}
+html body { background-color: black; color: white;}
+html, body { height: 100%; }
+body { margin: 0; font-family: "Magz", "Helvetica Neue", sans-serif; }

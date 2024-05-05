@@ -1,0 +1,26 @@
+#header {
+    margin: 1% 0;
+    text-align: center;
+}
+
+#title {
+    font-size: 500%;
+    display: inline-block;
+}
+
+#create {
+    padding: 0.5em;
+    font-size: 200%;
+    margin-left: 5%;
+    display: inline-block;
+    border-radius: 2em;
+}
+
+#lobbies {
+    background-color: grey;
+    text-align: center;
+}
+
+div div {
+    display: inline-block;
+}
